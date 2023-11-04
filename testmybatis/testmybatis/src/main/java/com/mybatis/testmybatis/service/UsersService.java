@@ -21,6 +21,7 @@ public class UsersService {
 
         //실제 데이터베이스에서 가져오는 Users 배열
         List<Users> result = usersMapper.findAll();
+        System.out.println(result);
         //위에 받은 Users배열을 UsersDTO 배열로 반환하기
         List<UsersDTO> users = new ArrayList<>();
 
@@ -38,6 +39,18 @@ public class UsersService {
 
     public void addUser(Users user){
         usersMapper.insertUser(user);
+    }
+
+    public void findUser(long id){
+        usersMapper.findById(id);
+    }
+
+    public void deleteUser(long id){
+        usersMapper.deleteUser(id);
+    }
+
+    public void updateUser(Users user){
+        usersMapper.updateUser(user);
     }
 
 }
